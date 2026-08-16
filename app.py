@@ -16,7 +16,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.sparse import hstack
 
-MODEL_DIR = Path('model')
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_DIR = BASE_DIR / 'model'
+TEST_DATA_PATH = BASE_DIR / 'test_data.csv'
+
+if not MODEL_DIR.exists():
+    st.error(f'Model directory not found: {MODEL_DIR}. Please clone the repo or keep the model/ folder beside app.py.')
+    st.stop()
 
 st.title('Job Listing Remote Prediction')
 
@@ -25,10 +31,10 @@ use_uploaded = st.sidebar.file_uploader('Upload CSV (optional)', type=['csv'])
 if use_uploaded is not None:
     df = pd.read_csv(use_uploaded)
 else:
-    if Path('test_data.csv').exists():
-        df = pd.read_csv('test_data.csv')
+    if TEST_DATA_PATH.exists():
+        df = pd.read_csv(TEST_DATA_PATH)
     else:
-        st.error('No test_data.csv found. Please add a CSV file or generate one before running the app.')
+        st.error(f'No test_data.csv found at {TEST_DATA_PATH}. Please add a CSV file or generate one before running the app.')
         st.stop()
 
 st.write('Data sample')
