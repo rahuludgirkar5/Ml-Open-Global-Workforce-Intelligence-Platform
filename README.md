@@ -11,6 +11,9 @@ The raw dataset files are intentionally not stored in the GitHub repository to k
 ## c. GitHub Repository Link
 https://github.com/rahuludgirkar5/Ml-Open-Global-Workforce-Intelligence-Platform
 
+## Live Streamlit App
+https://ml-open-global-workforce-intelligence-platform-5s6rkdakxzt4qeq.streamlit.app/
+
 ## d. Models used
 The following classification models were implemented and evaluated:
 - Logistic Regression
