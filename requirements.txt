@@ -1,0 +1,9 @@
+PyPDF2==3.0.1
+pandas
+numpy
+scikit-learn
+streamlit
+joblib
+matplotlib
+seaborn
+scipy
