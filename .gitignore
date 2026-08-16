@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+
+# Dataset files (keep them out of the repo)
+global_tech_market_2026.csv
+usajobs_tech_roles_2026.csv
+
+# Python caches
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
